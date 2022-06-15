@@ -1,0 +1,95 @@
+html{
+    overflow: hidden;
+}
+
+body{
+    background-color: #333;
+}
+
+button{
+    background-color: #7E57C4;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden{ display: none; }
+
+.card-list{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    align-content: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.flipper-container{
+    position: relative;
+    width: 120px;
+    height: 180px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.flipper{
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.flipper.show{
+    transform: rotateY(180deg);
+}
+
+.flipper-face{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: radial-gradient(circle, #D7CCEE 0%, #7E57C4 100%);
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.back{
+    transform: rotateY(180deg);
+}
+
+.front>img, .back>img{
+    padding: 20px;
+}
+
+.card-logo{
+    width: calc(100% - 10px);
+    filter: brightness(0) invert(1);
+}
+
+.display-score{
+    background-color: #7E57C4;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: right;
+    margin-top: 5px;
+    margin-bottom: -100px;
+    border-radius: 10px;
+}
+
+.score{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
